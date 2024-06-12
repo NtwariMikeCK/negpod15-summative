@@ -1,0 +1,12 @@
+# Function to delete a student record by student ID
+delete_student() {
+    echo "Enter student ID to delete:"
+    read student_id
+    
+    if [[ -f $student_file ]]; then
+        grep -v "^$student_id," $student_file > temp_file && mv temp_file $student_file
+        echo "Student record deleted successfully."
+    else
+        echo "No student records found."
+    fi
+}
