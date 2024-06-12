@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# File to store student records
+# File to store student records and store their emails
 student_file="students-list_0524.txt"
-
-# Function to create a student record
+feedback="feedback.txt"
+# Function to create a student record and store their emails
 create_student_record() {
     # Validate email (must end with ".com")
     while true; do
@@ -28,7 +28,7 @@ create_student_record() {
     read -p "Enter student ID: " student_id
     read -p "Course of interest at ALU: " course
 
-    echo "$email,$age,$student_id,$course" >> students-list_1023.txt
+    echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
     # Print success messages
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
@@ -43,6 +43,48 @@ view_students() {
         cat $student_file
     else
         echo "No student records found."
+    fi
+}
+#command on updates
+update_student_record() {
+    read -p "Enter student ID to update: " student_id
+
+    # Check if the student ID exists in the file
+    if grep -q ",${student_id}," students-list_0524.txt; then
+        echo "What do you want to update?"
+        echo "1. Email"
+        echo "2. Age"
+        echo "3. Course"
+        echo "4. All"
+        read -p "Enter your choice (1-4): " choice
+
+        case "$choice" in
+            1)
+                read -p "Enter new student email: " new_email
+                awk -v id="$student_id" -v email="$new_email" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            2)
+                read -p "Enter new student age: " new_age
+                awk -v id="$student_id" -v age="$new_age" -F ',' 'BEGIN {OFS = FS} $3 == id {$2 = age} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            3)
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            4)
+                read -p "Enter new student email: " new_email
+                read -p "Enter new student age: " new_age
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v email="$new_email" -v age="$new_age" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email; $2 = age; $4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            *)
+                echo "Invalid choice. Please try again."
+                ;;
+        esac
+
+        echo "Student record successfully updated."
+    else
+        echo "Student ID not found."
     fi
 }
 
@@ -70,6 +112,15 @@ delete_student() {
         fi
     done
 }
+#for storing the feedback give
+
+feedback() {
+    read -p "give feedback to help us know what to collect:" message
+
+    echo "$message" >> $feedback
+    echo "Thank you for your feedback, Take care"
+    exit
+}
 
 # Main menu loop
 while true; do
@@ -96,10 +147,10 @@ while true; do
 
     case "$choice" in
         1) create_student_record ;;
-        2) view_all_students ;;
+        2) view_students ;;
         3) delete_student ;;
         4) update_student_record ;;
-        5) provide us with feedback ;;
+        5) feedback ;;
         6) exit ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
