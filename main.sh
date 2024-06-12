@@ -34,6 +34,7 @@ create_student_record() {
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
     echo
     echo "Welcome to ALU!"
+    echo
 
 }
 # Function to view all students
