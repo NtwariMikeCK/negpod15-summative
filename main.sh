@@ -87,7 +87,7 @@ update_student_record() {
 
         echo "Student record successfully updated."
     else
-        echo "Student ID not found."
+        echo "Student ID not found,can you try again ?"
     fi
 }
 
