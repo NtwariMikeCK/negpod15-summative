@@ -109,7 +109,7 @@ while true; do
         2) view_all_students ;;
         3) delete_student ;;
         4) update_student_record ;;
-        5) provide us with feedback ;;
+        5) feedback ;;
         6) exit ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
