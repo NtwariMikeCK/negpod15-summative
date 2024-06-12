@@ -70,7 +70,6 @@ delete_student() {
         fi
     done
 }
-<<<<<<< HEAD
 
 # Function to update a student record by student ID
 update_student() {
