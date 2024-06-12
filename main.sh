@@ -13,7 +13,7 @@
 
 
 # Function to view all students
-view_stdents() {
+view_students() {
     if [[ -f $student_file ]]; then
         echo "List of all students:"
         cat $student_file
