@@ -3,7 +3,7 @@
 # File to store student records and store their emails
 student_file="students-list_0524.txt"
 feedback="feedback.txt"
-# Function to create a student record
+# Function to create a student record and store their emails
 create_student_record() {
     # Validate email (must end with ".com")
     while true; do
