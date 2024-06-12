@@ -70,3 +70,41 @@ delete_student() {
         fi
     done
 }
+
+
+
+
+
+
+
+
+
+
+
+# Menu function
+menu() {
+    while true; do
+        echo "-----------------------------"
+        echo "ALU Registration System"
+        echo "1. Create student record"
+        echo "2. View all students"
+        echo "3. Delete student record"
+        echo "4. Update student record"
+        echo "5. Exit"
+        echo "-----------------------------"
+        echo "Enter your choice:"
+        read choice
+
+        case $choice in
+            1) create_student ;;
+            2) view_students ;;
+            3) delete_student ;;
+            4) upte_student ;;
+            5) echo "Exiting..."; exit 0 ;;
+            *) echo "Invalid choice. Please try again." ;;
+        esac
+    done
+}
+
+# Start the menu
+menu
