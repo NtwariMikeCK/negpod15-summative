@@ -95,7 +95,7 @@ feedback() {
 
     echo "$feedback" >> $feedback
     echo "Thank you for your feedback, Take care"
-    exit;;
+    exit
 
 # Main menu loop
 while true; do
