@@ -2,7 +2,7 @@
 
 # File to store student records
 student_file="students-list_0524.txt"
-
+feedback = "feedback.txt"
 # Function to create a student record
 create_student_record() {
     # Validate email (must end with ".com")
@@ -70,6 +70,14 @@ delete_student() {
         fi
     done
 }
+#for storing the feedback given
+feedback() {
+    echo "give feedback to help us know what to collect:"
+    read feedback
+
+    echo "$feedback" >> $feedback
+    echo "Thank you for your feedback, Take care"
+    exit;;
 
 # Main menu loop
 while true; do
