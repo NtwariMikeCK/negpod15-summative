@@ -31,6 +31,7 @@ create_student_record() {
     echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
     # Print success message on the terminal after the succesful completion
+    echo
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
     echo
     echo "Welcome to ALU!"
