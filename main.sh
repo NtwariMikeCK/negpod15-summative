@@ -54,7 +54,7 @@ delete_student() {
        if [ "$student_id" = "q" ]; then
             echo "Returning to the main menu."
             break
-        elif grep -q "^.*,.*,${student_id}$"temp-emails.txt; then
+        elif grep -q "^.*,.*,${student_id}$" $student_file ; then
             # Ask for confirmation
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
@@ -70,11 +70,13 @@ delete_student() {
         fi
     done
 }
+
 # Main menu loop
 while true; do
        echo
         echo -e "\033[1;35mWELCOME TO ALU  STUDENT PORTAL PAGE\033[0m"
         echo "----------------------------------------"
+	echo "----------------------------------------"
         echo "Main Menu:"
     echo -e "\033[1;34m1. Create Student Record\033[0m"
     echo -e "\033[1;34m2. View All Students\033[0m"
@@ -84,6 +86,7 @@ while true; do
     echo -e "\033[1;34m6. Exit\033[0m"
     # Add two lines of spacing
     echo
+    echo "********************************************"
     echo "********************************************"
     echo "Choose an option (1-6):"
 
