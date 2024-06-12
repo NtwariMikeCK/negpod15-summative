@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-# Function to view all students
-view_students() {
-    if [[ -f $student_file ]]; then
-        echo "List of all students:"
-        cat $student_file
-    else
-        echo "No student records found."
-    fi
-}
-=======
 # File to store student records
 student_file="students-list_0524.txt"
 
@@ -58,10 +36,14 @@ create_student_record() {
     echo "Welcome to ALU!"
 
 }
-
 # Function to view all students
-view_all_students() {
-    cat students-list_1023.txt
+view_students() {
+    if [[ -f $student_file ]]; then
+        echo "List of all students:"
+        cat $student_file
+    else
+        echo "No student records found."
+    fi
 }
 
 # Function to delete a student by ID
@@ -88,5 +70,3 @@ delete_student() {
         fi
     done
 }
->>>>>>> 0d28ae8be6a0fe5e60f35eac3e201d808d491748
->>>>>>> 4e73e87c8d5425888d4b7853fa51ec615dfa2085
