@@ -50,7 +50,7 @@ delete_student() {
        if [ "$student_id" = "q" ]; then
             echo "Returning to the main menu."
             break
-        elif grep -q "^.*,.*,${student_id}$"temp-emails.txt; then
+        elif grep -q "^.*,.*,${student_id}$" $student_file ; then
             # Ask for confirmation
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
@@ -66,4 +66,4 @@ delete_student() {
         fi
     done
 }
->>>>>>> 0d28ae8be6a0fe5e60f35eac3e201d808d491748
+
