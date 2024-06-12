@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
+#student list 
 ada1@gmail.com,12,1234567,BSE
-=======
 larissa1@gmail.com,21,001,BSE
->>>>>>> 462b1306c737d05c804cd30f077e366ec415fc26
-=======
 ntwarimike@gmail.com,27,100,BSE
->>>>>>> 5e1132946da09d1762a74e53c060b987b73ff4da
+kelvin33@gmail.com,23,11223344,BEL
+updatetest1@gmail.com,22,121122,software engineering
+testing1@gmail.com,12,1,BEL
