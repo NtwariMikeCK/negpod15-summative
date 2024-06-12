@@ -73,7 +73,6 @@ delete_student() {
 #for storing the feedback give
 
 feedback() {
-    echo "give feedback to help us know what to collect:"
     read -p "give feedback to help us know what to collect:" message
 
     echo "$message" >> $feedback
@@ -109,7 +108,7 @@ while true; do
         2) view_all_students ;;
         3) delete_student ;;
         4) update_student_record ;;
-        5) provide us with feedback ;;
+        5) feedback ;;
         6) exit ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
