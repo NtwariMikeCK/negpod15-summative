@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# File to store student records
+# File to store student records and store their emails
 student_file="students-list_0524.txt"
 feedback="feedback.txt"
 # Function to create a student record
