@@ -175,7 +175,7 @@ while true; do
         echo -e "\033[1;35mWELCOME TO ALU  STUDENT PORTAL PAGE\033[0m"
         echo "----------------------------------------"
 	echo "----------------------------------------"
-        echo "Main Menu:"
+        echo "                  Main Menu:"
 	echo
     echo -e "\033[1;34m1. Create Student Record\033[0m"
     echo -e "\033[1;34m2. View All Students\033[0m"
