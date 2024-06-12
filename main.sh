@@ -69,7 +69,9 @@ delete_student() {
             echo "Invalid student ID. Please enter a valid ID."
         fi
     done
-}# Function to update a student record by student ID
+}
+
+# Function to update a student record by student ID
 update_student() {
     echo "Enter student ID to update:"
     read student_id
