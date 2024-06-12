@@ -2,7 +2,7 @@
 
 # File to store student records
 student_file="students-list_0524.txt"
-feedback = "feedback.txt"
+feedback="feedback.txt"
 # Function to create a student record
 create_student_record() {
     # Validate email (must end with ".com")
@@ -28,7 +28,7 @@ create_student_record() {
     read -p "Enter student ID: " student_id
     read -p "Course of interest at ALU: " course
 
-    echo "$email,$age,$student_id,$course" >> students-list_1023.txt
+    echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
     # Print success messages
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
@@ -70,6 +70,7 @@ delete_student() {
         fi
     done
 }
+<<<<<<< HEAD
 
 # Function to update a student record by student ID
 update_student() {
@@ -91,13 +92,18 @@ update_student() {
     fi
 }
 #for storing the feedback given
+=======
+#for storing the feedback give
+
+>>>>>>> 1e8b2c8812e234be289f32b8633569cf7f141c33
 feedback() {
     echo "give feedback to help us know what to collect:"
-    read feedback
+    read -p "give feedback to help us know what to collect:" message
 
-    echo "$feedback" >> $feedback
+    echo "$message" >> $feedback
     echo "Thank you for your feedback, Take care"
     exit
+}
 
 # Main menu loop
 while true; do
@@ -127,7 +133,7 @@ while true; do
         2) view_all_students ;;
         3) delete_student ;;
         4) update_student_record ;;
-        5) provide us with feedback ;;
+        5) feedback ;;
         6) exit ;;
         *) echo "Invalid choice. Please try again." ;;
     esac
