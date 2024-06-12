@@ -1,4 +1,6 @@
-#student list 
+
+-------------------STUDENT LIST (EMAILS,AGES,ID AND COURSE OF INTEREST)-------------
+ 
 ada1@gmail.com,12,1234567,BSE
 larissa1@gmail.com,21,001,BSE
 ntwarimike@gmail.com,27,100,BSE
