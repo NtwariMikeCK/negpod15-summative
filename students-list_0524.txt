@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 larissa1@gmail.com,21,001,BSE
+=======
+ntwarimike@gmail.com,27,100,BSE
+>>>>>>> 5e1132946da09d1762a74e53c060b987b73ff4da
