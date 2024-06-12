@@ -165,6 +165,7 @@ feedback() {
 
     echo "$message" >> $feedback
     echo "Thank you for your feedback, Take care"
+    echo "*************************************************************************************"
     exit
 }
 
