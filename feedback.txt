@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-thank you
-=======
-hello
->>>>>>> 5e1132946da09d1762a74e53c060b987b73ff4da
+#   FEEDBACK DOCUMENT FOR ALU STUDENT PORTAL
+
 learning at alu ahd always been my dream
