@@ -46,7 +46,7 @@ view_students() {
         echo "No student records found."
     fi
 }
-#command on updates
+#update commands 
 update_student_record() {
     read -p "Enter student ID to update: " student_id
 
