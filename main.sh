@@ -73,38 +73,35 @@ delete_student() {
 
 
 
+# Main menu loop
+while true; do
+       echo
+        echo -e "\033[1;35mWELCOME TO ALU  STUDENT PORTAL PAGE\033[0m"
+        echo "----------------------------------------"
+        echo "Main Menu:"
+    echo -e "\033[1;34m1. Create Student Record\033[0m"
+    echo -e "\033[1;34m2. View All Students\033[0m"
+    echo -e "\033[1;34m3. Delete Student\033[0m"
+    echo -e "\033[1;34m4. Update Student Record\033[0m"
+    echo -e "\033[1;34m5. Provide your feedback\033[0m"
+    echo -e "\033[1;34m6. Exit\033[0m"
+    # Add two lines of spacing
+    echo
+    echo "********************************************"
+    echo "Choose an option (1-6):"
 
 
+    read -p "Enter your choice: " choice
 
 
+    case "$choice" in
+        1) create_student_record ;;
+        2) view_all_students ;;
+        3) delete_student ;;
+        4) update_student_record ;;
+        5) provide us with feedback ;;
+        6) exit ;;
+        *) echo "Invalid choice. Please try again." ;;
+    esac
+done
 
-
-
-
-# Menu function
-menu() {
-    while true; do
-        echo "-----------------------------"
-        echo "ALU Registration System"
-        echo "1. Create student record"
-        echo "2. View all students"
-        echo "3. Delete student record"
-        echo "4. Update student record"
-        echo "5. Exit"
-        echo "-----------------------------"
-        echo "Enter your choice:"
-        read choice
-
-        case $choice in
-            1) create_student ;;
-            2) view_students ;;
-            3) delete_student ;;
-            4) upte_student ;;
-            5) echo "Exiting..."; exit 0 ;;
-            *) echo "Invalid choice. Please try again." ;;
-        esac
-    done
-}
-
-# Start the menu
-menu
