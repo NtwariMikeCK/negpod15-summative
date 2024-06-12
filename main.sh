@@ -91,11 +91,8 @@ update_student() {
         echo "Student ID not found."
     fi
 }
-#for storing the feedback given
-=======
 #for storing the feedback give
 
->>>>>>> 1e8b2c8812e234be289f32b8633569cf7f141c33
 feedback() {
     read -p "give feedback to help us know what to collect:" message
 
