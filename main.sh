@@ -72,20 +72,43 @@ delete_student() {
 }
 
 # Function to update a student record by student ID
-update_student() {
-    echo "Enter student ID to update:"
-    read student_id
-    
-    if grep -q "^$student_id," $student_file; then
-        echo "Enter new email:"
-        read new_email
-        echo "Enter new age:"
-        read new_age
-        
-        grep -v "^$student_id," $student_file > temp_file
-        echo "$student_id,$new_email,$new_age" >> temp_file
-        mv temp_file $student_file
-        echo "Student record updated successfully."
+update_student_record() {
+    read -p "Enter student ID to update: " student_id
+
+    # Check if the student ID exists in the file
+    if grep -q ",${student_id}," students-list_0524.txt; then
+        echo "What do you want to update?"
+        echo "1. Email"
+        echo "2. Age"
+        echo "3. Course"
+        echo "4. All"
+        read -p "Enter your choice (1-4): " choice
+
+        case "$choice" in
+            1)
+                read -p "Enter new student email: " new_email
+                awk -v id="$student_id" -v email="$new_email" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            2)
+                read -p "Enter new student age: " new_age
+                awk -v id="$student_id" -v age="$new_age" -F ',' 'BEGIN {OFS = FS} $3 == id {$2 = age} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            3)
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            4)
+                read -p "Enter new student email: " new_email
+                read -p "Enter new student age: " new_age
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v email="$new_email" -v age="$new_age" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email; $2 = age; $4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            *)
+                echo "Invalid choice. Please try again."
+                ;;
+        esac
+
+        echo "Student record successfully updated."
     else
         echo "Student ID not found."
     fi
