@@ -36,10 +36,14 @@ create_student_record() {
     echo "Welcome to ALU!"
 
 }
-
 # Function to view all students
-view_all_students() {
-    cat students-list_1023.txt
+view_students() {
+    if [[ -f $student_file ]]; then
+        echo "List of all students:"
+        cat $student_file
+    else
+        echo "No student records found."
+    fi
 }
 
 # Function to delete a student by ID
