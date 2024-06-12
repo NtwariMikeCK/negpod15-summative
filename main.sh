@@ -183,7 +183,7 @@ while true; do
     echo -e "\033[1;34m4. Update Student Record\033[0m"
     echo -e "\033[1;34m5. Provide your feedback\033[0m"
     echo -e "\033[1;34m6. Exit\033[0m"
-    # Add two lines of spacing
+    # Adding  two lines of spacing to make the code run well 
     echo
     echo "********************************************"
     echo "********************************************"
