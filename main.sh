@@ -103,8 +103,8 @@ delete_student() {
             # Ask for confirmation to delete to see if the user wants to realy delete or not.
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
-                # Remove the corresponding student record from the file
-                sed -i "/^.*,.*,${student_id}$/d" students-list_1023.txt
+                # Remove the corresponding student record from the students-list_0524 file
+                sed -i "/^.*,.*,${student_id}$/d" students-list_0524.txt
                 echo "Student with ID $student_id has been successfully deleted."
             else
                 echo "Deletion canceled. Returning to the main menu."
