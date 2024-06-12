@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# File to store student records
+# File to store student records and store their emails
 student_file="students-list_0524.txt"
 feedback="feedback.txt"
 # Function to create a student record
@@ -97,7 +97,6 @@ update_student() {
 
 >>>>>>> 1e8b2c8812e234be289f32b8633569cf7f141c33
 feedback() {
-    echo "give feedback to help us know what to collect:"
     read -p "give feedback to help us know what to collect:" message
 
     echo "$message" >> $feedback
@@ -130,7 +129,7 @@ while true; do
 
     case "$choice" in
         1) create_student_record ;;
-        2) view_all_students ;;
+        2) view_students ;;
         3) delete_student ;;
         4) update_student_record ;;
         5) feedback ;;
