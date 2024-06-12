@@ -2,7 +2,7 @@
 
 # File to store student records
 student_file="students-list_0524.txt"
-feedback = "feedback.txt"
+feedback="feedback.txt"
 # Function to create a student record
 create_student_record() {
     # Validate email (must end with ".com")
