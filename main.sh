@@ -73,9 +73,9 @@ delete_student() {
 #for storing the feedback given
 feedback() {
     echo "give feedback to help us know what to collect:"
-    read feedback
+    read message
 
-    echo "$feedback" >> $feedback
+    echo "$message" >> $feedback
     echo "Thank you for your feedback, Take care"
     exit
 
