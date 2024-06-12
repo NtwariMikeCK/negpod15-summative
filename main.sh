@@ -51,6 +51,7 @@ update_student_record() {
     read -p "Enter student ID to update: " student_id
 
     # Check if the student ID exists in the file
+    echo
     if grep -q ",${student_id}," students-list_0524.txt; then
         echo "What do you want to update?"
         echo "1. Email"
