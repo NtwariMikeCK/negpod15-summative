@@ -158,7 +158,7 @@ update_student_record() {
         echo "Student ID not found."
     fi
 }
-#for storing the feedback give
+#feedback display with the student essentials on our portal 
 
 feedback() {
     read -p "give feedback to help us know what to collect:" message
