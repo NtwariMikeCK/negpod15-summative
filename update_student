@@ -3,7 +3,7 @@ update_student() {
     echo "Enter student ID to update:"
     read student_id
     
-    if grep -q "^$student_id," $student_file; 
+    if grep -q "^$student_id," $student_file; then 
         echo "Enter new email:"
         read new_email
         echo "Enter new age:"
