@@ -105,7 +105,7 @@ while true; do
 
     case "$choice" in
         1) create_student_record ;;
-        2) view_all_students ;;
+        2) view_students ;;
         3) delete_student ;;
         4) update_student_record ;;
         5) feedback ;;
