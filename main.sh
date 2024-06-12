@@ -37,7 +37,7 @@ create_student_record() {
     echo
 
 }
-# Function to view all students
+# Function to view all students that have accessed our student portal
 view_students() {
     if [[ -f $student_file ]]; then
         echo "List of all students:"
