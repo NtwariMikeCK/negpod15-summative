@@ -100,7 +100,7 @@ delete_student() {
             echo "Returning to the main menu."
             break
         elif grep -q "^.*,.*,${student_id}$" $student_file ; then
-            # Ask for confirmation
+            # Ask for confirmation to delete to see if the user wants to realy delete or not.
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
                 # Remove the corresponding student record from the file
