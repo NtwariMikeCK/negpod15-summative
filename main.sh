@@ -71,11 +71,6 @@ delete_student() {
     done
 }
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 755ad0f3c059a97a25c5a735415020fd0d07fbe9
 # Main menu loop
 while true; do
        echo
