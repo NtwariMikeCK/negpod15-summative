@@ -73,7 +73,6 @@ delete_student() {
 #for storing the feedback give
 
 feedback() {
-    echo "give feedback to help us know what to collect:"
     read -p "give feedback to help us know what to collect:" message
 
     echo "$message" >> $feedback
