@@ -28,7 +28,7 @@ create_student_record() {
     read -p "Enter student ID: " student_id
     read -p "Course of interest at ALU: " course
 
-    echo "$email,$age,$student_id,$course" >> students-list_1023.txt
+    echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
     # Print success messages
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
@@ -70,10 +70,11 @@ delete_student() {
         fi
     done
 }
-#for storing the feedback given
+#for storing the feedback give
+
 feedback() {
     echo "give feedback to help us know what to collect:"
-    read message
+    read -p "give feedback to help us know what to collect:" message
 
     echo "$message" >> $feedback
     echo "Thank you for your feedback, Take care"
