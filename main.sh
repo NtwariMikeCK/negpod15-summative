@@ -3,7 +3,7 @@
 # File to store student records and store their emails in a file
 student_file="students-list_0524.txt"
 feedback="feedback.txt"
-# Function to create a student record
+# Function to create a student record 
 create_student_record() {
     # Validate email (must end with ".com")
     while true; do
@@ -30,7 +30,7 @@ create_student_record() {
 
     echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
-    # Print success messages
+    # Print success message on the terminal after the succesful completion
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
     echo
     echo "Welcome to ALU!"
