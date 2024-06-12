@@ -1,27 +1,5 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD
-
-
-
-
-
-
-
-
-
-
-
-# Function to view all students
-view_students() {
-    if [[ -f $student_file ]]; then
-        echo "List of all students:"
-        cat $student_file
-    else
-        echo "No student records found."
-    fi
-}
-=======
 # File to store student records
 student_file="students-list_0524.txt"
 
@@ -58,10 +36,14 @@ create_student_record() {
     echo "Welcome to ALU!"
 
 }
-
 # Function to view all students
-view_all_students() {
-    cat students-list_1023.txt
+view_students() {
+    if [[ -f $student_file ]]; then
+        echo "List of all students:"
+        cat $student_file
+    else
+        echo "No student records found."
+    fi
 }
 
 # Function to delete a student by ID
@@ -88,5 +70,34 @@ delete_student() {
         fi
     done
 }
->>>>>>> 0d28ae8be6a0fe5e60f35eac3e201d808d491748
->>>>>>> 4e73e87c8d5425888d4b7853fa51ec615dfa2085
+# Main menu loop
+while true; do
+       echo
+        echo -e "\033[1;35mWELCOME TO ALU  STUDENT PORTAL PAGE\033[0m"
+        echo "----------------------------------------"
+        echo "Main Menu:"
+    echo -e "\033[1;34m1. Create Student Record\033[0m"
+    echo -e "\033[1;34m2. View All Students\033[0m"
+    echo -e "\033[1;34m3. Delete Student\033[0m"
+    echo -e "\033[1;34m4. Update Student Record\033[0m"
+    echo -e "\033[1;34m5. Provide your feedback\033[0m"
+    echo -e "\033[1;34m6. Exit\033[0m"
+    # Add two lines of spacing
+    echo
+    echo "********************************************"
+    echo "Choose an option (1-6):"
+
+
+    read -p "Enter your choice: " choice
+
+
+    case "$choice" in
+        1) create_student_record ;;
+        2) view_all_students ;;
+        3) delete_student ;;
+        4) update_student_record ;;
+        5) provide us with feedback ;;
+        6) exit ;;
+        *) echo "Invalid choice. Please try again." ;;
+    esac
+done
