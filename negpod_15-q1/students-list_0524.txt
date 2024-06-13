@@ -9,4 +9,4 @@ updatetest1@gmail.com,22,121122,software engineering
 testing1@gmail.com,12,1,BEL
 ntwarikevin95@gmail.com,32,333,BEL
 larissa10@gmail.com,12,1,BEL
-kwizera@alustudent.com,13,666,networking
+kwizera@gmail.com,14,666,comp
