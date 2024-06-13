@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-# File to store student records
+# File to store student records and store their emails in a file
 student_file="students-list_0524.txt"
 feedback="feedback.txt"
-# Function to create a student record
+# Function to create a student record 
 create_student_record() {
     # Validate email (must end with ".com")
     while true; do
@@ -30,19 +30,64 @@ create_student_record() {
 
     echo "$email,$age,$student_id,$course" >> students-list_0524.txt
 
-    # Print success messages
+    # Print success message on the terminal after the succesful completion
+    echo
     echo -e "\033[1;33mStudent has been successfully created.\033[0m"
     echo
     echo "Welcome to ALU!"
+    echo
 
 }
-# Function to view all students
+# Function to view all students that have accessed our student portal
 view_students() {
     if [[ -f $student_file ]]; then
         echo "List of all students:"
         cat $student_file
     else
         echo "No student records found."
+    fi
+}
+#update commands 
+update_student_record() {
+    read -p "Enter student ID to update: " student_id
+
+    # Check if the student ID exists in the file
+    echo
+    if grep -q ",${student_id}," students-list_0524.txt; then
+        echo "What do you want to update?"
+        echo "1. Email"
+        echo "2. Age"
+        echo "3. Course"
+        echo "4. All"
+        read -p "Enter your choice (1-4): " choice
+
+        case "$choice" in
+            1)
+                read -p "Enter new student email: " new_email
+                awk -v id="$student_id" -v email="$new_email" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            2)
+                read -p "Enter new student age: " new_age
+                awk -v id="$student_id" -v age="$new_age" -F ',' 'BEGIN {OFS = FS} $3 == id {$2 = age} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            3)
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            4)
+                read -p "Enter new student email: " new_email
+                read -p "Enter new student age: " new_age
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v email="$new_email" -v age="$new_age" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email; $2 = age; $4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            *)
+                echo "Invalid choice. Please try again."
+                ;;
+        esac
+
+        echo "Student record successfully updated."
+    else
+        echo "Student ID not found,can you try again ?"
     fi
 }
 
@@ -55,11 +100,11 @@ delete_student() {
             echo "Returning to the main menu."
             break
         elif grep -q "^.*,.*,${student_id}$" $student_file ; then
-            # Ask for confirmation
+            # Ask for confirmation to delete to see if the user wants to realy delete or not.
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
-                # Remove the corresponding student record from the file
-                sed -i "/^.*,.*,${student_id}$/d" students-list_1023.txt
+                # Remove the corresponding student record from the students-list_0524 file
+                sed -i "/^.*,.*,${student_id}$/d" students-list_0524.txt
                 echo "Student with ID $student_id has been successfully deleted."
             else
                 echo "Deletion canceled. Returning to the main menu."
@@ -70,13 +115,57 @@ delete_student() {
         fi
     done
 }
-#for storing the feedback give
+
+# Function to update a student record by student ID
+update_student_record() {
+    read -p "Enter student ID to update: " student_id
+
+    # Check if the student ID exists in the file
+    if grep -q ",${student_id}," students-list_0524.txt; then
+        echo "What do you want to update?"
+        echo "1. Email"
+        echo "2. Age"
+        echo "3. Course"
+        echo "4. All"
+        read -p "Enter your choice (1-4): " choice
+
+        case "$choice" in
+            1)
+                read -p "Enter new student email: " new_email
+                awk -v id="$student_id" -v email="$new_email" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            2)
+                read -p "Enter new student age: " new_age
+                awk -v id="$student_id" -v age="$new_age" -F ',' 'BEGIN {OFS = FS} $3 == id {$2 = age} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            3)
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            4)
+                read -p "Enter new student email: " new_email
+                read -p "Enter new student age: " new_age
+                read -p "Enter new course of interest at ALU: " new_course
+                awk -v id="$student_id" -v email="$new_email" -v age="$new_age" -v course="$new_course" -F ',' 'BEGIN {OFS = FS} $3 == id {$1 = email; $2 = age; $4 = course} 1' students-list_0524.txt > temp.txt && mv temp.txt students-list_0524.txt
+                ;;
+            *)
+                echo "Invalid choice. Please try again."
+                ;;
+        esac
+
+        echo "Student record successfully updated."
+    else
+        echo "Student ID not found."
+    fi
+}
+#feedback display with the student essentials on our portal 
 
 feedback() {
     read -p "give feedback to help us know what to collect:" message
 
     echo "$message" >> $feedback
     echo "Thank you for your feedback, Take care"
+    echo "*************************************************************************************"
     exit
 }
 
@@ -86,14 +175,15 @@ while true; do
         echo -e "\033[1;35mWELCOME TO ALU  STUDENT PORTAL PAGE\033[0m"
         echo "----------------------------------------"
 	echo "----------------------------------------"
-        echo "Main Menu:"
+        echo "                  Main Menu:"
+	echo
     echo -e "\033[1;34m1. Create Student Record\033[0m"
     echo -e "\033[1;34m2. View All Students\033[0m"
     echo -e "\033[1;34m3. Delete Student\033[0m"
     echo -e "\033[1;34m4. Update Student Record\033[0m"
     echo -e "\033[1;34m5. Provide your feedback\033[0m"
     echo -e "\033[1;34m6. Exit\033[0m"
-    # Add two lines of spacing
+    # Adding  two lines of spacing to make the code run well 
     echo
     echo "********************************************"
     echo "********************************************"

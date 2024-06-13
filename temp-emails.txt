@@ -1,0 +1,3 @@
+---------------WELCOME TO THE STUDENT TEMP.tXt FILE-------------
+
+to see the contents of this file ,use cat temp-emails.txt
