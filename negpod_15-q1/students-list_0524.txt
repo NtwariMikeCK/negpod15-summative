@@ -9,4 +9,9 @@ updatetest1@gmail.com,22,121122,software engineering
 testing1@gmail.com,12,1,BEL
 ntwarikevin95@gmail.com,32,333,BEL
 larissa10@gmail.com,12,1,BEL
+<<<<<<< HEAD
 kwizera@gmail.com,14,666,comp
+=======
+mike1@gmail.com,12,0000,BSE
+w12@gmail.com,12,111111,bel
+>>>>>>> 80267f4e146f00938e1cce57f66dfd3582e3fcb0
