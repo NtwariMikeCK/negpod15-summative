@@ -1,2 +1,4 @@
 larissa1@gmail.com,21,001,BSE
 ntwarimike@gmail.com,27,100,BSE
+kelvin1@gmail.com,24,1111111111,BEL
+sonia@gmail.com,20,007,BEL
