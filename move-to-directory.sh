@@ -2,7 +2,12 @@
 
 directory_name="negpod_15-q1"
 #create the directory if it doesn't exist
+<<<<<<< HEAD
 if [! -d "$directory_name"]; then 
+=======
+if [! -d "$directory_name"];
+then 
+>>>>>>> ffdcd5d0297e98150aeb8a0590e79ccf625c2232
 	mkdir "$directory_name"
 fi
 
