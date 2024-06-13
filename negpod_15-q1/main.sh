@@ -93,6 +93,7 @@ update_student_record() {
 
 # Function to delete a student by ID
 delete_student() {
+    student_file="students-list_0524.txt"
     while true; do
             read -p "Enter student ID to delete(or 'q' to quit): " student_id
 
@@ -100,6 +101,7 @@ delete_student() {
             echo "Returning to the main menu."
             break
         elif grep -q "^.*,.*,${student_id}$" $student_file ; then
+	    echo "hello,you"
             # Ask for confirmation to delete to see if the user wants to realy delete or not.
             read -p "Are you sure you want to delete student with ID $student_id? (yes/no): " confirm
             if [ "$confirm" = "yes" ]; then
