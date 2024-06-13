@@ -1,10 +1,4 @@
 
-<<<<<<< HEAD
-ada1@gmail.com,12,1234567,BSE
-larissa1@gmail.com,21,001,BSE
-ntwarimike@gmail.com,27,100,BSE
-
-=======
 -------------------STUDENT LIST (EMAILS,AGES,ID AND COURSE OF INTEREST)-------------
  
 ada1@gmail.com,12,1234567,BSE
@@ -13,5 +7,4 @@ ntwarimike@gmail.com,27,100,BSE
 kelvin33@gmail.com,23,11223344,BEL
 updatetest1@gmail.com,22,121122,software engineering
 testing1@gmail.com,12,1,BEL
->>>>>>> dc715f8529cd57253614753371bc694091b8e02c
 ntwarikevin95@gmail.com,32,333,BEL
